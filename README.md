@@ -12,7 +12,16 @@ Espero que se encuentren excelente estimados lectores, en el presente repo desar
 Problema: Diseñar un código, el cual al ingresar un número entero n y separe todos los digitos que componen dicho número.
 
 Código solución:
-```sh
+```
+f separar(n: int): #Se define la función para separar
+    lista4= list(str(n)) #Al número ingresado el string separa cada digito y lo ingresa en la lista
+    for i in lista4:  #Se toma cada número de la lista
+        print(i) #Se imprime cada número de la lista
+        
+if __name__=="__main__":
+    n = int(input("Ingrese un número: ")) #Se pregunta el número que quiere ingresar
+    sepa = separar(n) #Se llama la función
+    print(sepa) #Se imprime
 
 ```
 
@@ -51,7 +60,15 @@ if __name__ == "__main__": #Se hace uso de la función main para llamar las func
 Problema: Desarrollar un código que al correr, solicite ingresar dos números enteros y determine si dichos números son espejos.
 
 Código solución:
-```sh
+```
+n = int(input("Ingrese un número de dos digitos: ")) #Ingresa el número de dos digitos
+i = int(input("Ingrese un número de dos digitos: "))  #Ingresa el número de dos digitos  
+lista1 = list(str(n)) #Se vuelven los dos digitos en dos números de una lista
+lista2 = list(str(i)) #Se vuelven los dos digitos en dos números de una lista
+if lista1[0] in lista2 and lista1[1] in lista2: #Sí el primer indice de la lista 1 esta en lista2 y sí el segundo numero de la lista 1 esta en lista2
+    print(str(n)+" es espejo de "+str(i)) #Imprime que los números son espejos
+else: #Sino 
+    print("Los números ingresados no son espejos")#Imprime que los numeros no son espejos
 
 ```
 
@@ -298,5 +315,55 @@ Problema: Diseñar un algoritmo que determine si una matriz es mágica o no.
 Código solución:
 
 ```sh
+def sumarcolum(lista3:list): #Se define la función para sumar las columnas
+    lista12 = [] #Lista vacia que va almacenar las sumas de las columnas
+    for i in range(len(lista3)): #Se define el rango de los números que va a tomar i
+        o = 0 #Para cada i o va a ser 0 al inicio
+        for n in range(len(lista3[i])): #Se define el rango 
+            o += lista3[n][i] #Se suman las columnas y se guarda el resultado en o
+        lista12.append(o) # o se agrega a la lista
+    for j in range(len(lista12)-1): #Se define el rango que va a tomar j, se le resta 1
+        if lista12[j] == lista12[(j+1)]: #Se compara el indice j y el j+1, ya que se le habia restado 1
+            continue # Sí son iguales continua con el ciclo for
+        else: #Sino 
+            return print("No es magica") # Imprime que no es magica
+    return lista12[0] #Sí la suma de todas las columnas es igual devuelve el perimer indice
+    
+def sumarfilas(lista1:list): #Se define la función sumar filas 
+    lista3 = [] #Lista vacia donde se van a guardar la suma de las filas
+    for i in range(len(lista1)): #Se define el rango 
+        o = 0 #Para cada i o va a ser 0
+        for n in range(len(lista1[i])):#Se define el rango de cada lista dentro de llista 1
+            o += lista1[i][n] #Se suman las fila y las guarda o
+        lista3.append(o) #Se agrega o a la lista
+    for j in range(len(lista3)-1): #Se le resta uno al rango
+        if lista3[j] == lista3[(j-1)]:#Se comparan y si es el mismo continua con el for
+            continue
+        else: #Sino
+            return print("No es magica")#Imprime no es magica
+    return lista3[0] #Sí las sumas de las filas son iguales se se toma el primer indice de las sumas
+
+def sumarDiago(lista13:list): #Se define la función diagonal
+    n = 0 
+    for i in range(len(lista13)): #Se define la longitud
+        n += lista13[i][i] #Se suma la diagonal
+    return n #Devuelve n
+    
+    
+
+if __name__=="__main__":
+    a = int(input("Ingrese la cantidad de filas y columnas de la matriz: ")) #Se pregunta cuantas filas
+    lista5 =[] #Lista vacia
+    for i in range(a): #Rango de filas que quiere
+        lista4=[] #Lista vacia
+        for n in range(a): #Rango de columnas
+            p = int(input("Ingrese el numero que va en las corrdenadas "+str(i+1)+" , "+str(n+1)+" : "))#Se pregunta en la ubicación que ingrese el número
+            lista4.append(p)#Se agraga el número a la fila
+        lista5.append(lista4) #Se agrega la fila a la matriz
+    suma = sumarfilas(lista5) #Se llama la función para sumar filas
+    suma1 = sumarcolum(lista5) #Se llama la función para sumar columnas
+    sumadia = sumarDiago(lista5) #Se llama la función para sumar diagonales
+    if suma == suma1 and suma1 == sumadia: #Se compara que la suma de los indices sean igual
+        print("Es una matriz magica") #Sí es igual imprime que es una matriz magica
 
 ```
