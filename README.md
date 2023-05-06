@@ -10,6 +10,7 @@ Espero que se encuentren excelente estimados lectores, en el presente repo desar
 
 ## - Punto 1:
 Problema: Diseñar un código, el cual al ingresar un número entero n y separe todos los digitos que componen dicho número.
+
 Código solución:
 ```sh
 
@@ -17,6 +18,7 @@ Código solución:
 
 ## - Punto 2:
 Problema: Realizar un programa en Python, que al ingresar un número flotante, separe la parte entera y la decimal, e imprima ambas partes por separado.
+
 Código solución:
 ```sh
 def separarEnteros(x): #Definimos la función que vamos a utilizar para este punto
@@ -47,6 +49,7 @@ if __name__ == "__main__": #Se hace uso de la función main para llamar las func
 
 ## - Punto 3:
 Problema: Desarrollar un código que al correr, solicite ingresar dos números enteros y determine si dichos números son espejos.
+
 Código solución:
 ```sh
 
@@ -54,6 +57,7 @@ Código solución:
 
 ## - Punto 4:
 Problema: Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. Usando math para traer la función coseno y mostrando además, la diferencia entre el valor real y la aproximación, lo anterior con cuántos valores de la serie, se tienen errores del 10%, 1%, 0.1% y 0.001%.
+
 Código solución:
 ```sh
 import math #Importar la función matemática predeterminada de Python
@@ -114,6 +118,7 @@ if __name__ == "__main__":
 
 ## - Punto 5:
 Problema: Crear un programa que calcule el mínimo común multiplo de dos números dados, resolver dicho problema desde la perpectiva iterativa como recursiva.
+
 Código solución: 
 ```sh
 # Definiremos la funcion MinimoComunMultiploiterativ
@@ -145,6 +150,7 @@ if __name__ == "__main__":
 
 ## - Punto 6:
 Problema: Diseñar un código que permita determinar si un elemento se repite o no, dentro de una lista
+
 Código solución:
 ```sh
 #Se define la función para saber si hay elementos repetidos o no
@@ -172,6 +178,7 @@ if __name__ == "__main__":
 
 ## - Punto 7:
 Problema: Realizar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
+
 Código solución:
 ```sh
 def buscar_vocales(lista):
@@ -203,13 +210,38 @@ buscar_vocales(lista)
 
 ## - Punto 8:
 Problema: Desarrollar un programa, el cual al ser dadas dos listas, indique que elementos aparecen en la primero pero no en la segunda.
+
 Código solución:
 ```sh
+#Se define una función para verificar la repetición de elementos
+def existencia(lista1: list, lista2: list):
+    resultado = [] # Se crea una lista vacia para guardar los elementos que no compartan
+    for elemento in lista1: #Ciclo for para el elemento de la lista 1
+        if elemento not in lista2: #Si no aparece en la lista 2
+            resultado.append(elemento) #Es agregado a la lista de elementos que no tienen en compun
+    return resultado
 
+# Se llaman las funciones, se solicita el ingreso de las variables y se imprimen los resultados 
+if __name__ == "__main__":
+    lista1 = [] #Lista vacia
+    lista2 = [] #Lista vacia
+    y = int(input("Ingrese la cantidad de elementos de la lista 1: "))
+    for i in range(y):
+        elemento1 = input("Ingrese un elemento para la lista 1: ")
+        lista1.append(elemento1) #Elementos ingresados agregados a la lista 1
+    x = int(input("Ingrese la cantidad de elementos de la lista 2: "))
+    for i in range(x):
+        elemento2 = input("Ingrese un elemento para la lista 2: ")
+        lista2.append(elemento2) #Elementos ingresados agregados a la lista 2
+    print("La lista 1 es:", lista1)
+    print("La lista 2 es:", lista2)
+    resultado = existencia(lista1, lista2) #Se llama la función definida anteriormente
+    print("Los elementos que no tienen en común son:", resultado)
 ```
 
 ## - Punto 9:
 Problema: Resolver el punto 7 del [taller número 1](https://github.com/fegonzalez7/pdc_unal_clase8) usando operaciones con vectores.
+
 Código solución:
 ```sh
 numeros = []
@@ -262,6 +294,7 @@ Problema: Diseñar un algoritmo que determine si una matriz es mágica o no.
 		<td style="color:#141414">Una matriz cuadrada es mágica si la suma de cada una de sus filas, de cada una de sus columnas y de cada diagonal es igual.<br>
 	</tr>
 </table>
+
 Código solución:
 
 ```sh
