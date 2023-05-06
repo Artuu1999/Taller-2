@@ -56,7 +56,60 @@ Código solución:
 Problema: Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. Usando math para traer la función coseno y mostrando además, la diferencia entre el valor real y la aproximación, lo anterior con cuántos valores de la serie, se tienen errores del 10%, 1%, 0.1% y 0.001%.
 Código solución:
 ```sh
+import math #Importar la función matemática predeterminada de Python
 
+#Definimos la función para hallar los números factoriales
+def factorial(n):
+    fact = 1 # Se inicializa el ciclo
+    for i in range(1, n+1): # Se determina el rango
+        fact *= i #Se actualiza el ciclo
+    return fact
+
+# Definimos la función aproximacionCoseno para poder aproximar el coseno mediante el uso de la serie de Taylor de un número x utilizando n términos
+def aproximacionCoseno(x, n):
+    cosenoAprox = 0 # Se inicializa
+    for i in range(0, n+1): #Declaramos el ciclo for y su rango
+        termino = ((-1)**i) * (x**(2*i) / factorial(2*i)) #Colocamos el valor de la expresión
+        cosenoAprox += termino #Actualizar la función
+    return cosenoAprox
+
+# Se calcula el coseno real de x
+def cosenoreal(x):
+    coseno = math.cos(x) #Se trae la función coseno del modulo math
+    return coseno
+
+# Definimos una función para reconocer el error
+def calcularn(x, margenError):
+    n = 0 #Se inicializa la variable
+    coseno_real = cosenoreal(x)
+    aprox = aproximacionCoseno(x, n)
+    error = abs(aprox - coseno_real)
+    while error > margenError: #Se declara el ciclo while
+        n += 1 #Se actualizan las variables
+        aprox = aproximacionCoseno(x, n)
+        error = abs(aprox - coseno_real)
+    return n
+
+#Definir una función para reconocer la cantidad de n para cada margen de error
+def margenError(x):
+    margenes = [0.1, 1, 10, 1000] #Poner en una lista la cantidad de margenes de errores
+    for margen in margenes: #Ciclo for para recorrer uno por uno
+        n = calcularn(x, margen/100) #Se calcula
+        print("Con un margen de error del "+str(margen)+"%, se necesitan "+str(n)+" valores de la serie.")
+        
+# Se llaman las funciones, se solicita el ingreso de las variables y se imprimen los resultados       
+if __name__ == "__main__":
+    x = float(input("Ingrese un valor para hallar su coseno: "))
+    n = int(input("Ingrese la cantidad de veces que quiere que se repita la serie: "))
+    coseno_real = cosenoreal(x)
+    aprox = aproximacionCoseno(x, n)
+    error = abs(aprox - coseno_real)
+    unidades = calcularn(x, 0.001)
+    print("El valor aproximado usando la serie de Taylor es de:", aprox)
+    print("Valor real usando la función math:", round(coseno_real, 3))
+    print("La diferencia entre el valor real y el aproximado es de:", error)
+    print("La cantidad de 'n' necesarios para un margen de error menor al 0.001% es de:", unidades)
+    margenError(x)
 ```
 
 ## - Punto 5:
