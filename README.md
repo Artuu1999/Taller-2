@@ -185,7 +185,27 @@ buscar_vocales(lista)
 Problema: Desarrollar un programa, el cual al ser dadas dos listas, indique que elementos aparecen en la primero pero no en la segunda.
 Código solución:
 ```sh
+#Se define la función para saber si hay elementos repetidos o no
+def repeticiones (lista:list):
+    repetido = False 
+    for i in range(n): #Mediante un ciclo for se recorren los elementos de la lista
+        for j in range(i+1, n):  #Determina los elementos según su índice
+            if lista[i] == lista[j]: #Compara si ambos elementos son iguales
+                repetido = True
+                break  #Rompe el ciclo
 
+# Se llaman las funciones, se solicita el ingreso de las variables y se imprimen los resultados       
+if __name__ == "__main__":
+    lista = [] #Se crea una lista vacia
+    n = int(input("Ingrese la cantidad de elementos de la lista: "))
+    for i in range(n): #Ciclo for para recorrer dicha lista
+        elemento = int(input("Ingrese un número para la lista: ")) 
+        lista.append(elemento) #Se agrega elemento por elemento a la lista
+    print("la lista ingresada anteriormente es:", lista)
+    if repetido: #Se condiciona
+        print("La lista contiene elementos repetidos.")
+    else:
+        print("La lista no contiene elementos repetidos.")
 ```
 
 ## - Punto 9:
