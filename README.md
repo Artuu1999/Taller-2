@@ -167,6 +167,7 @@ Problema: Diseñar un algoritmo que determine si una matriz es mágica o no.
 	</tr>
 </table>
 Código solución:
+
 ```sh
 
 ```
