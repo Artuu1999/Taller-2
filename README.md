@@ -90,6 +90,8 @@ Primero, los dos números se convierten en listas de dos elementos, donde cada e
 ## - Punto 4:
 Problema: Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. Usando math para traer la función coseno y mostrando además, la diferencia entre el valor real y la aproximación, lo anterior con cuántos valores de la serie, se tienen errores del 10%, 1%, 0.1% y 0.001%.
 
+Fórmula: $$cos(x) \approx cos(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i}}{(2i)!}$$
+
 Código solución:
 ```sh
 import math #Importar la función matemática predeterminada de Python
