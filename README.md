@@ -24,6 +24,10 @@ if __name__=="__main__":
     print(sepa) #Se imprime
 
 ```
+Este código separa un número entero en sus dígitos individuales. Primero se define una función llamada separar que toma el número que se quiere separar. Luego, se convierte el número en una lista de sus dígitos individuales y se itera sobre cada dígito para imprimirlo en una línea separada.
+
+Cuando se ejecuta el programa, se pide al usuario que ingrese el número que desea separar. La función separar se llama con ese número como argumento y se almacena en una variable llamada sepa. Finalmente, se imprime sepa, que es la lista de dígitos del número que se ingresó.
+
 
 ## - Punto 2:
 Problema: Realizar un programa en Python, que al ingresar un número flotante, separe la parte entera y la decimal, e imprima ambas partes por separado.
@@ -55,6 +59,14 @@ if __name__ == "__main__": #Se hace uso de la función main para llamar las func
     print("Parte entera: ", digitosEnteros) #Se imprime la lista de los dígitos enteros
     print("Parte decimal: ", digitosDecimales) #Se imprime la lista de dígitos decimales
 ```
+Este código tiene una función que se llama "separarEnteros". Lo que hace es que si tienes un número con decimales, la función te devuelve dos listas: una lista con los dígitos enteros y otra lista con los dígitos decimales.
+
+Para obtener los dígitos enteros, la función toma el número que le has dado y lo convierte en un número entero. Luego, convierte cada uno de los dígitos de ese número en un elemento de la lista de dígitos enteros.
+
+Para obtener los dígitos decimales, la función resta el número entero al número original y convierte el resultado en un número positivo (usando el valor absoluto). Luego, convierte cada uno de los dígitos de ese número en un elemento de la lista de dígitos decimales.
+
+Por último, el código imprime las dos listas de dígitos.
+
 
 ## - Punto 3:
 Problema: Desarrollar un código que al correr, solicite ingresar dos números enteros y determine si dichos números son espejos.
@@ -69,8 +81,11 @@ if lista1[0] in lista2 and lista1[1] in lista2: #Sí el primer indice de la list
     print(str(n)+" es espejo de "+str(i)) #Imprime que los números son espejos
 else: #Sino 
     print("Los números ingresados no son espejos")#Imprime que los numeros no son espejos
-
 ```
+Este código recibe dos números de dos dígitos del usuario y comprueba si son "espejos". Es decir, si los dos dígitos del primer número están en el segundo número, y viceversa.
+
+Primero, los dos números se convierten en listas de dos elementos, donde cada elemento es un dígito. Luego, se utiliza una declaración if para verificar si ambos dígitos de la lista1 están en la lista2 y viceversa. Si esto es cierto, el programa imprime un mensaje que indica que los números son espejos. De lo contrario, imprime un mensaje que indica que los números no son espejos.
+
 
 ## - Punto 4:
 Problema: Diseñar una función que permita calcular una aproximación de la función coseno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Taylor. Usando math para traer la función coseno y mostrando además, la diferencia entre el valor real y la aproximación, lo anterior con cuántos valores de la serie, se tienen errores del 10%, 1%, 0.1% y 0.001%.
@@ -132,6 +147,8 @@ if __name__ == "__main__":
     print("La cantidad de 'n' necesarios para un margen de error menor al 0.001% es de:", unidades)
     margenError(x)
 ```
+El programa utiliza la serie de Taylor para aproximar el coseno de un número dado. El usuario ingresa el número y la cantidad de términos de la serie que quiere utilizar para la aproximación. El programa calcula el valor aproximado y lo compara con el valor real obtenido con la función coseno del módulo math. Además, se determina la cantidad de términos necesarios para que el margen de error de la aproximación sea menor al 0,001%.
+
 
 ## - Punto 5:
 Problema: Crear un programa que calcule el mínimo común multiplo de dos números dados, resolver dicho problema desde la perpectiva iterativa como recursiva.
@@ -164,6 +181,8 @@ if __name__ == "__main__":
     # Imprimimos el resultado del mcm.
     print("El minimo comun multiplo de", a, "y", b, "es:", mcm)
 ```
+Este es un programa que calcula el mínimo común múltiplo de dos números enteros que ingresa el usuario. El programa utiliza una función llamada "MinimoComunMultiploiterativo" que utiliza un enfoque iterativo para encontrar el mcm. Primero, la función inicializa la variable mcm en 1 y un contador i en 1. Luego, utiliza un ciclo while que se ejecuta hasta que encuentra el primer número que sea divisible por ambos números ingresados. Finalmente, la función devuelve el resultado del mcm encontrado. En el bloque principal del programa, se le pide al usuario que ingrese los dos números, se llama a la función "MinimoComunMultiploiterativo" para calcular el mcm y se imprime el resultado en la pantalla.
+
 
 ## - Punto 6:
 Problema: Diseñar un código que permita determinar si un elemento se repite o no, dentro de una lista
@@ -192,6 +211,10 @@ if __name__ == "__main__":
     else:
         print("La lista no contiene elementos repetidos.")
 ```
+En este código se define una función llamada "repeticiones" que recibe una lista como argumento y determina si hay elementos repetidos en ella. La función utiliza dos ciclos for para recorrer la lista y comparar cada elemento con el resto de los elementos. Si encuentra que dos elementos son iguales, establece la variable "repetido" como verdadera y sale del ciclo.
+
+Luego, en el bloque principal del código, se crea una lista vacía y se le pide al usuario que ingrese la cantidad de elementos que quiere agregar a la lista, así como los elementos en sí. Después de crear la lista, se llama a la función "repeticiones" y se verifica si hay elementos repetidos en la lista. Si se encuentra algún elemento repetido, se imprime un mensaje indicándolo; de lo contrario, se indica que no hay elementos repetidos.
+
 
 ## - Punto 7:
 Problema: Realizar un programa que determine si en una lista se encuentra una cadena de caracteres con dos o más vocales. Si la cadena existe debe imprimirla y si no existe debe imprimir 'No existe'.
@@ -224,6 +247,8 @@ def buscar_vocales(lista):
 lista = ["hola", "halo", "estas", "amigo"]
 buscar_vocales(lista)
 ```
+Esta función busca en una lista de cadenas aquellas que contengan al menos dos vocales. Si encuentra cadenas que cumplan con esa condición, las imprime; de lo contrario, imprime 'No existe'. En el ejemplo dado, la función recibe una lista de cuatro cadenas y encuentra dos que contienen al menos dos vocales: "hola" y "estas". Entonces, imprime esas dos cadenas.
+
 
 ## - Punto 8:
 Problema: Desarrollar un programa, el cual al ser dadas dos listas, indique que elementos aparecen en la primero pero no en la segunda.
@@ -255,6 +280,10 @@ if __name__ == "__main__":
     resultado = existencia(lista1, lista2) #Se llama la función definida anteriormente
     print("Los elementos que no tienen en común son:", resultado)
 ```
+El código es una función llamada "existencia" que recibe dos listas como argumentos. La función compara los elementos de la primera lista con los de la segunda lista y devuelve una nueva lista con los elementos de la primera lista que no se encuentran en la segunda lista.
+
+Luego en el bloque principal del código, se pide al usuario ingresar el número de elementos que tendrá cada lista y luego los elementos en sí. Se imprime la lista 1, la lista 2 y los elementos de la lista 1 que no se encuentran en la lista 2 usando la función "existencia".
+
 
 ## - Punto 9:
 Problema: Resolver el punto 7 del [taller número 1](https://github.com/fegonzalez7/pdc_unal_clase8) usando operaciones con vectores.
@@ -300,6 +329,8 @@ print("Los números ordenados de forma descendente son:", numeros_descendentes)
 print("La potencia del mayor número elevado al menor número es:", potencia)
 print("La raíz cúbica del menor número es:", raiz_cubica)
 ```
+El código solicita al usuario ingresar cinco números reales y los almacena en una lista llamada "numeros". Luego, calcula el promedio de los números, ordena la lista de números de forma ascendente y calcula la mediana. También calcula el promedio multiplicativo, la potencia del mayor número elevado al menor número y la raíz cúbica del menor número. Por último, imprime todos los resultados calculados.
+
 
 ## - Punto 10:
 Problema: Diseñar un algoritmo que determine si una matriz es mágica o no.
@@ -367,3 +398,6 @@ if __name__=="__main__":
         print("Es una matriz magica") #Sí es igual imprime que es una matriz magica
 
 ```
+Este es un programa en Python que permite al usuario ingresar una matriz de números y determina si se trata de una "matriz mágica", es decir, una matriz cuadrada en la que la suma de cada fila, cada columna y cada diagonal principal es igual.
+
+El programa primero define tres funciones: una para sumar las columnas de la matriz, otra para sumar las filas y una tercera para sumar la diagonal principal. Luego, en la función principal, el usuario ingresa los valores de la matriz, y se llama a las tres funciones definidas para calcular la suma de las columnas, filas y diagonal. Si las tres sumas son iguales, el programa indica que se trata de una matriz mágica, de lo contrario, indica que no lo es.
